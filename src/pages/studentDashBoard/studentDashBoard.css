@@ -1,0 +1,67 @@
+.studentDashBoard {
+  height: 100vh;
+  width: 100vw;
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.studentDashBoard .header {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #434343;
+}
+.studentDashBoard .id {
+  color: #929292;
+}
+.studentDashBoard h1 {
+  color: white;
+}
+.studentDashBoard h2 {
+  color: #3fff75;
+  cursor: pointer;
+}
+.studentDashBoard .team_wrpr {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+.studentDashBoard table {
+  width: 90%;
+  margin-bottom: 90px;
+}
+.studentDashBoard tr {
+  display: flex;
+  background-color: #1a1a1a;
+}
+.studentDashBoard th {
+  padding: 10px;
+  flex: 1;
+  font-size: 15px;
+  color: white;
+}
+.studentDashBoard td {
+  flex: 1;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
+.studentDashBoard tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+.studentDashBoard footer {
+  padding: 50px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #434343;
+  color: white;
+}

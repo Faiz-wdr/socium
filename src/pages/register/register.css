@@ -1,0 +1,55 @@
+.register {
+  height: 100vh;
+  width: 100vw;
+  background-color: #272727;
+  display: flex;
+}
+.register > div {
+  flex: 1;
+}
+.register .bgImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.register .form {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 150px 50px 30px;
+}
+
+.register .dpdwn_container {
+  display: flex;
+  width: 80%;
+  margin-bottom: 10px;
+}
+.register .dpdwn_container .dpdwn_wrpr {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.register .btn_wrpr {
+  display: flex;
+  width: 90%;
+  justify-content: flex-end;
+}
+
+/* input comp */
+.reg_input {
+  margin-bottom: 20px;
+}
+.register .label {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+}
+.reg_input .input_reg {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  outline: none;
+  background-color: transparent;
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: white;
+}

@@ -1,0 +1,19 @@
+.nav_bar {
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.nav_bar h2 {
+  color: #3fff75;
+  flex: 3;
+}
+.nav_bar ul {
+  flex: 0.6;
+
+  display: flex;
+  justify-content: space-between;
+}
+.nav_bar li {
+  color: #fff;
+  list-style: none;
+}

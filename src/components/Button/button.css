@@ -1,0 +1,19 @@
+.primary_btn {
+  background-color: #02b920;
+  color: white;
+  width: max-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.secondary_btn {
+  background-color: transparent;
+  color: white;
+  width: max-content;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid #6b6b6b;
+}
