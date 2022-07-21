@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { PrimaryBtn, SecondaryBtn } from '../../components/Button/Buttons'
 import { auth, db } from '../../firebase'
+import { logout } from '../../helpers/logout'
 import './partNerSelection.css'
 
 
@@ -86,6 +87,9 @@ const PartNerSelection = () => {
 
     return (
         <div className='partner' >
+            <div style={{ position: 'absolute', top: 20, right: 20 }} >
+                <PrimaryBtn onClick={logout} label={'Logout'} />
+            </div>
             <h1>Select Your Learning Partner</h1>
             <p className='sub_title' >Showing the list of students  with same interset</p>
 
@@ -112,7 +116,7 @@ const PartNerSelection = () => {
             </table>
             <div className="btn_wrpr">
                 <div style={{ marginRight: 10 }} >
-                    <SecondaryBtn label='Cancel' />
+                    <SecondaryBtn  onClick={logout} label='Cancel' />
                 </div>
                 <PrimaryBtn label='Submit' onClick={submitHandler} />
             </div>

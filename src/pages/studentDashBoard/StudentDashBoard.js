@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { PrimaryBtn } from '../../components/Button/Buttons'
+import { PrimaryBtn, SecondaryBtn } from '../../components/Button/Buttons'
 import './studentDashBoard.css'
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { auth, db } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../../helpers/logout';
 
 const StudentDashBoard = () => {
     const navigate = useNavigate()
@@ -51,6 +52,9 @@ const StudentDashBoard = () => {
     if (loading) return
     return (
         <div className='studentDashBoard' >
+            <div style={{ position: 'absolute', top: 20, right: 20 }} >
+                <SecondaryBtn onClick={logout} label={'Logout'} />
+            </div>
 
             <div className="header">
                 <div className="sub_1">
