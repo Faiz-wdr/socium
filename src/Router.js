@@ -2,6 +2,8 @@ import { onAuthStateChanged } from 'firebase/auth'
 import React, { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { auth } from './firebase'
+import About from './pages/about/About'
+import AdminDashBoard from './pages/admin/AdminDashboard'
 
 import LoginPage from './pages/login/LoginPage'
 import PartNerSelection from './pages/partnerSelection/PartNerSelection'
@@ -42,7 +44,9 @@ function Router() {
             <Route path="/" element={<LoginPage />} />
             <Route path="/register" element={<Register />} />
             <Route path="/partner" element={<PartNerSelection />} />
+            <Route path="/admin" element={<AdminDashBoard />} />
             <Route path="/student_dashboard" element={<StudentDashBoard />} />
+            <Route path="/about" element={<About />} />
         </Routes>
 
     )

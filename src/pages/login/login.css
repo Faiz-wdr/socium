@@ -15,6 +15,7 @@
 .login .content .sub_1 h1 {
   color: white;
   margin-bottom: 50px;
+  font-size: 50px;
 }
 .login .content .sub_2 {
   flex: 1;

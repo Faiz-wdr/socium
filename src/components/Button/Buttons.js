@@ -2,11 +2,12 @@ import React from 'react'
 import './button.css'
 
 
-export const PrimaryBtn = ({ label, onClick }) => {
+export const PrimaryBtn = ({ label, onClick, style }) => {
     return (
         <div
             className='primary_btn'
             onClick={onClick}
+            style={style}
         >
             <p>{label}</p>
         </div>

@@ -38,7 +38,8 @@ const PartNerSelection = () => {
                     email: user.email,
                     interest: user.interest,
                     experience: user.experience,
-                    teamId: user.email.substring(0, 3) + user.RegisterNo.substring(0, 3)
+                    teamId: user.email.substring(0, 3) + user.RegisterNo.substring(0, 3),
+
                 }
             });
 
@@ -103,6 +104,7 @@ const PartNerSelection = () => {
                 {users.map(user => {
                     if (user?.email == auth.currentUser.email) return
                     if (user?.interest != myData.interest) return
+                    if (user?.partner !=undefined) return
                     return <tr style={{ cursor: 'pointer', ...(selectedUser?.email == user.email && { backgroundColor: '#02b920' }) }}
                         onClick={() => setSelectedUser(user)}
                     >

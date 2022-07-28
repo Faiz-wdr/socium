@@ -1,17 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { PrimaryBtn, SecondaryBtn } from '../../components/Button/Buttons'
-import './studentDashBoard.css'
+import './adminDashboard.css'
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { auth, db } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../../helpers/logout';
 
-const StudentDashBoard = () => {
+const AdminDashBoard = () => {
     const navigate = useNavigate()
     const [userData, setUserData] = useState({})
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
+    const [students, setStudents] = useState([])
 
 
+    const getAllStudents = async () => {
+        setLoading(true)
+
+        let tempStu = []
+        const q = query(collection(db, "Users"));
+
+        const querySnapshot = await getDocs(q);
+
+        querySnapshot.forEach((doc) => {
+
+            tempStu.push({ id: doc.id, ...doc.data() })
+
+        });
+        setStudents(tempStu)
+        setLoading(false)
+    }
 
     const getUserData = async () => {
         setLoading(true)
@@ -20,16 +37,17 @@ const StudentDashBoard = () => {
 
         const querySnapshot = await getDocs(q);
         querySnapshot.forEach((doc) => {
-            if (doc.data().isAdmin) {
-                navigate('/admin')
-            }
-            else if (doc.data().partner) {
-                setUserData({ id: doc.id, ...doc.data() })
-                setLoading(false)
-            } else {
-                navigate('/partner')
-            }
+            // if (doc.data().isAdmin) {
+            //     navigate('/admin')
+            // }
+            // else if (doc.data().partner) {
+            setUserData({ id: doc.id, ...doc.data() })
+            setLoading(false)
+            // } else {
+            //     navigate('/partner')
+            // }
         });
+        setLoading(false)
     }
     const experienceLinkHandler = () => {
         if (userData.interest == 'Python') {
@@ -48,65 +66,62 @@ const StudentDashBoard = () => {
         }
     }
     useEffect(() => {
-
+        getAllStudents()
         getUserData()
     }, [auth?.currentUser?.email])
-    if (loading) return
+    // if (loading) return
     return (
-        <div className='studentDashBoard' >
+        <div className='adminDashboard' >
             <div style={{ position: 'absolute', top: 20, right: 20 }} >
                 <SecondaryBtn onClick={logout} label={'Logout'} />
             </div>
 
             <div className="header">
                 <div className="sub_1">
-                    <p className='id' >Team Id</p>
-                    <h1>{userData?.partner?.teamId}</h1>
+                    <p className='id' >Admin</p>
+                    <h1>A34RT</h1>
                 </div>
-                <h2
+                {/* <h2
                     onClick={experienceLinkHandler}
-                >{userData?.interest}</h2>
+                >{userData?.interest}</h2> */}
             </div>
             <div className='team_wrpr' >
-                <p className='id ' style={{ alignSelf: 'flex-start', marginBottom: 20 }} >Team Details</p>
+                <p className='id ' style={{ alignSelf: 'flex-start', marginBottom: 20 }} >Student Details</p>
                 <table>
-                    <tr>
-                        <th>Member 1:</th>
-                        <th>{userData.name}</th>
-                        <th>{userData.email}</th>
-                        <th>{userData.experience}</th>
-                    </tr>
 
-                    <tr>
-                        <th>Member 2:</th>
-                        <th>{userData?.partner.name}</th>
-                        <th>{userData?.partner.email}</th>
-                        <th
 
-                        >{userData?.partner.experience}</th>
-                    </tr>
+                    {students.map((stu) =>
+                        <tr>
+                            <th>Member 2:</th>
+                            <th>{stu.name}</th>
+                            <th>{stu.email}</th>
+                            <th
+
+                            >{stu.experience}</th>
+                        </tr>
+                    )}
 
 
                 </table>
-                <PrimaryBtn label={'Connect Partner'} onClick={() => window.location.href = ('mailto:' + userData?.partner?.email)} />
+                {/* <PrimaryBtn label={'Connect Partner'} onClick={() => window.location.href = ('mailto:' + userData?.partner?.email)} /> */}
             </div>
             <div style={{ flex: 1 }} />
             <footer>
-                <h3
+                {/* <h3
                     style={{ cursor: 'pointer' }}
                     onClick={() => window.location.href = 'https://olivine-planet-59a.notion.site/Learning-Resources-44e6636df76a4fa08439af67176aec00'}
-                >Learning Resources</h3>
+                >Learning Resources</h3> */}
                 <h3
                     style={{ cursor: 'pointer' }}
-                    onClick={() => window.location.href = 'https://airtable.com/shrKtakeHcghtfwQl'}
-                >Suggestion</h3>
+                    onClick={() => window.location.href = 'https://airtable.com/shrYKwSS5wGdhQNEY'}
+                >Suggestions</h3>
                 <h3
                     style={{ cursor: 'pointer' }}
-                    onClick={() => window.location.href = 'https://airtable.com/shrYYC44fD2qlq4UW'}
-                >Report</h3>
+                    onClick={() => window.location.href = 'https://airtable.com/shrInjTc1F4GiUzbS'}
+                >Reports</h3>
             </footer>
         </div>
     )
 }
 
-export default StudentDashBoard
+export default AdminDashBoard

@@ -79,7 +79,7 @@ function LoginPage() {
                             onChange={(e) => setPassword(e.target.value)}
                             type='password'
                         />
-                        <PrimaryBtn label='Login' onClick={signInHandler} />
+                        <PrimaryBtn label='Login' style={{ width: '80%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={signInHandler} />
                     </div>
                 </div>
             </div>

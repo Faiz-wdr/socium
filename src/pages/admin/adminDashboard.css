@@ -1,0 +1,68 @@
+.adminDashboard {
+  /* height: 100vh; */
+  width: 100vw;
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.adminDashboard .header {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #434343;
+}
+.adminDashboard .id {
+  color: #929292;
+}
+.adminDashboard h1 {
+  color: white;
+}
+.adminDashboard h2 {
+  color: #3fff75;
+  cursor: pointer;
+}
+.adminDashboard .team_wrpr {
+  padding-top: 25px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 50%; */
+}
+.adminDashboard table {
+  width: 90%;
+  margin-bottom: 50px;
+}
+.adminDashboard tr {
+  display: flex;
+  background-color: #1a1a1a;
+}
+.adminDashboard th {
+  padding: 10px;
+  flex: 1;
+  font-size: 15px;
+  color: white;
+}
+.adminDashboard td {
+  flex: 1;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
+.adminDashboard tr:nth-child(even) {
+  background-color: #1e1e1e;
+}
+
+.adminDashboard footer {
+  padding: 50px;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #434343;
+  color: white;
+}

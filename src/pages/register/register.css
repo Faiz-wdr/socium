@@ -15,12 +15,12 @@
 .register .form {
   display: flex;
   flex-direction: column;
-  padding: 50px 150px 50px 30px;
+  padding: 100px 150px 50px 30px;
 }
 
 .register .dpdwn_container {
   display: flex;
-  width: 80%;
+  width: 100%;
   margin-bottom: 10px;
 }
 .register .dpdwn_container .dpdwn_wrpr {
@@ -28,7 +28,9 @@
   align-items: center;
   width: 100%;
 }
-
+.dpdwn_wrpr .label {
+  width: 105px;
+}
 .register .btn_wrpr {
   display: flex;
   width: 90%;
@@ -38,18 +40,27 @@
 /* input comp */
 .reg_input {
   margin-bottom: 20px;
+  /* background-color: red; */
 }
 .register .label {
-  color: rgba(255, 255, 255, 0.5);
+  color: white;
   margin-bottom: 10px;
 }
 .reg_input .input_reg {
   border: 1px solid rgba(255, 255, 255, 0.5);
   outline: none;
   background-color: transparent;
-  width: 80%;
+  width: 100%;
   padding: 10px;
   border-radius: 5px;
   font-size: 15px;
   color: white;
+}
+
+.reserved {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 13px;
 }

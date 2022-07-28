@@ -36,7 +36,7 @@ const Register = () => {
     ]
 
     const colourStyles = {
-        control: (styles) => ({ ...styles, backgroundColor: 'transparent', width: 150, marginLeft: 10, color: 'white',fontSize: 15 }),
+        control: (styles) => ({ ...styles, backgroundColor: 'transparent', width: 150, marginLeft: 10, color: 'black', fontSize: 15, }),
         option: (styles, { data, isDisabled, isFocused, isSelected }) => {
             const color = 'gray'
             return {
@@ -62,7 +62,7 @@ const Register = () => {
         },
         // input: (styles) => ({ ...styles, }),
         // placeholder: (styles) => ({ ...styles, }),
-        // singleValue: (styles, { data }) => ({ ...styles, }),
+        singleValue: (styles, { data }) => ({ ...styles, color: 'white' }),
     };
 
     const signUpHandler = async () => {
@@ -110,8 +110,9 @@ const Register = () => {
 
                 <div className='dpdwn_container' >
                     <div className='dpdwn_wrpr'>
-                        <p className='label'>Interested <br /> Area</p>
+                        <p className='label'>Interested Area</p>
                         <Select
+
                             options={interestedOptions}
                             styles={colourStyles}
                             value={{ value: interest, label: interest }}
@@ -136,6 +137,7 @@ const Register = () => {
                     <PrimaryBtn label='Sign-UP' onClick={signUpHandler} />
                 </div>
             </div>
+            <p className='reserved' >© <span style={{ color: '#02b920' }} >Socium</span>. All Rights Resrved 2022</p>
         </div>
     )
 }

@@ -7917,6 +7917,13 @@ react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
+react-elfsight-widget@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-elfsight-widget/-/react-elfsight-widget-1.0.0.tgz#0f12605b46f02572b1451ab113d5ab6a39099aac"
+  integrity sha512-0ULCrNE15fCUVrU8V6LLrQOsyny9P/KFZPj+coX0GedswagV5hfzrv4rN7IJWg0HfmfSA3m+AhqCJZ+Vny+hxA==
+  dependencies:
+    tslib "^2.1.0"
+
 react-error-overlay@^6.0.11:
   version "6.0.11"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.11.tgz"
