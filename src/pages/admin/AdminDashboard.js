@@ -92,12 +92,10 @@ const AdminDashBoard = () => {
 
                     {students.map((stu) =>
                         <tr>
-                            <th>Member 2:</th>
                             <th>{stu.name}</th>
                             <th>{stu.email}</th>
-                            <th
-
-                            >{stu.experience}</th>
+                            <th>{stu.interest}</th>
+                            <th>{stu.experience}</th>
                         </tr>
                     )}
 
