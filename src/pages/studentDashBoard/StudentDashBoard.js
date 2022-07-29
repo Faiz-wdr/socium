@@ -33,18 +33,18 @@ const StudentDashBoard = () => {
     }
     const experienceLinkHandler = () => {
         if (userData.interest == 'Python') {
-            window.location.href = 'https://olivine-planet-59a.notion.site/Python-de6e9534d2284156aa76883981d95caf'
+            window.open('https://olivine-planet-59a.notion.site/Python-de6e9534d2284156aa76883981d95caf')
         } else if (userData.interest == 'Flutter') {
-            window.location.href = 'https://olivine-planet-59a.notion.site/Flutter-5e599c91368c419280518c885b884eae'
+            window.open('https://olivine-planet-59a.notion.site/Flutter-5e599c91368c419280518c885b884eae')
         }
         else if (userData.interest == 'Machine Learning') {
-            window.location.href = 'https://olivine-planet-59a.notion.site/Machine-Learning-0a2ef29c831b4e33a4b38cb997ebf75c'
+            window.open('https://olivine-planet-59a.notion.site/Machine-Learning-0a2ef29c831b4e33a4b38cb997ebf75c')
         }
         else if (userData.interest == 'UI/UX') {
-            window.location.href = 'https://olivine-planet-59a.notion.site/UI-UX-6608155473b545269f7b5923f8a90616'
+            window.open('https://olivine-planet-59a.notion.site/UI-UX-6608155473b545269f7b5923f8a90616')
         }
         else if (userData.interest == 'Cyber Security') {
-            window.location.href = 'https://olivine-planet-59a.notion.site/Cyber-Security-32c354cea06a4640ac2b924a0798433e'
+            window.open('https://olivine-planet-59a.notion.site/Cyber-Security-32c354cea06a4640ac2b924a0798433e')
         }
     }
     useEffect(() => {
@@ -94,15 +94,15 @@ const StudentDashBoard = () => {
             <footer>
                 <h3
                     style={{ cursor: 'pointer' }}
-                    onClick={() => window.location.href = 'https://olivine-planet-59a.notion.site/Learning-Resources-44e6636df76a4fa08439af67176aec00'}
+                    onClick={() => window.open( 'https://olivine-planet-59a.notion.site/Learning-Resources-44e6636df76a4fa08439af67176aec00')}
                 >Learning Resources</h3>
                 <h3
                     style={{ cursor: 'pointer' }}
-                    onClick={() => window.location.href = 'https://airtable.com/shrKtakeHcghtfwQl'}
+                    onClick={() => window.open( 'https://airtable.com/shrKtakeHcghtfwQl')}
                 >Suggestion</h3>
                 <h3
                     style={{ cursor: 'pointer' }}
-                    onClick={() => window.location.href = 'https://airtable.com/shrYYC44fD2qlq4UW'}
+                    onClick={() => window.open( 'https://airtable.com/shrYYC44fD2qlq4UW')}
                 >Report</h3>
             </footer>
         </div>

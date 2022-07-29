@@ -16,15 +16,19 @@ function LoginPage() {
     const [password, setPassword] = useState()
 
 
-    const signInHandler = () => {
+    const signInHandler = async () => {
+        if (email == '' || password == '') {
+            return alert('Fill all fields')
+        }
         console.log(email, password)
-        signInWithEmailAndPassword(auth, email, password)
+        await signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 navigate('/student_dashboard')
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
+                alert('Invalid credentials')
                 // ..
             });
     }
